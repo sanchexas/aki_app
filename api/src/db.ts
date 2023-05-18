@@ -1,20 +1,19 @@
-import {createPool} from 'mysql2/promise'; 
+import {Sequelize} from "sequelize-typescript"
 import { config } from 'dotenv';
+import { User } from "./models/User";
 config();
 
 export async function connection(){
-    /*
-    Пример применения в моделях либо репозмториях, при обращении к БД:
-        const conn = await connection();
-        const response = await conn.query('SELECT * FROM products WHERE product_id = ? ;', idProd); 
-        await conn.end(); //Обязательно закрывать соединение!!!
-        return response[0];
-    */
-        const dbConnection = await createPool({
-                host: process.env.DB_HOST,
-                user: process.env.DB_USER,
-                password: '',               // Не знаю, стоит ли ставить пароль?... Если да, то закинуть в .env
-                database: process.env.DB_NAME,
-        });
+
+        const dbConnection = await new Sequelize(
+            process.env.DB_NAME as string,
+            process.env.DB_USER as string,
+            process.env.DB_PASSWORD as string,
+            {
+                host:process.env.DB_HOST,
+                models:[User],
+                dialect:"mysql",
+            }
+        );
         return dbConnection;
 }
