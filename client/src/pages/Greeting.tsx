@@ -13,7 +13,7 @@ const Greeting = () =>{
                 <p>Агентство креативных индустрий является единым окном для взаимодействия
                 органов власти и представителей креативного предпринимательства Москвы.</p>
                 <div style={{display: "flex", gap:"40px"}}>
-                    <Link to="/signup" className='btn__bordered'>Зарегистрироваться</Link>
+                    <Link to="/signupas" className='btn__bordered'>Зарегистрироваться</Link>
                     <Link to="/signin" className='btn__default'>Войти</Link>
                 </div>
             </div>
