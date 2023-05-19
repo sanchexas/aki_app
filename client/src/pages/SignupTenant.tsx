@@ -1,9 +1,8 @@
 import { useState } from "react";
 import userController from "../controllers/user.controller";
-import { Link, useNavigate } from 'react-router-dom';
-import { errorsAxiosCodes } from "../errors";
+import { useNavigate } from 'react-router-dom';
 
-const SignUp = () =>{
+const SignUpTenant = () =>{
     const [lastname, setLastname] = useState<string>('');
     const [name, setName] = useState<string>('');
     const [middlename, setMiddlename] = useState<string>('');
@@ -12,7 +11,7 @@ const SignUp = () =>{
     const [password, setPassword] = useState<string>('');
     const redirect = useNavigate();
     function submit(){
-        userController.create(
+        userController.createUser(
             {
                 second_name: lastname, 
                 name: name, 
@@ -30,7 +29,7 @@ const SignUp = () =>{
     return(
         <div>
             <form action="" className='form__default'>
-                <h2>Регистрация</h2>
+                <h2>Арендатор</h2>
                 <div className='form__item'>
                     <span>Фамилия</span>
                     <input className='input__default' type="text" required onChange={(e)=>setLastname(e.target.value)}/>
@@ -62,4 +61,4 @@ const SignUp = () =>{
     );
 }
 
-export default SignUp;
+export default SignUpTenant;

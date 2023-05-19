@@ -15,6 +15,16 @@ body{
     color: white;
     font-size: 18px;
 }
+textarea{
+    resize: none;
+    font-family: Cera-Pro-Regular;
+    font-size: 17px;
+}
+
+option, select{
+    font-family: Cera-Pro-Regular;
+    font-size: 17px;
+}
 header{
     width: 100%;
     height: 50px;
@@ -25,7 +35,7 @@ header{
 }
 main{
     min-height: 80vh;
-    margin-top: 50px;
+    margin-top: 45px;
 }
 a{
     text-decoration: none;
@@ -72,12 +82,21 @@ footer{
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15px;
+    /* gap: 15px; */
+}
+.two__form__blocks{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* align-items: center; */
+    justify-content: center;
+    gap: 30px;
 }
 .form__item{
     display: flex;
     flex-direction: column;
     gap: 5px;
+    margin-top: 10px;
 }
 .input__default{
     padding: 10px 12px;
@@ -115,6 +134,68 @@ footer{
     font-size: 60px;
     display: flex;
     flex-direction: column;
+}
+.signup__cards__page{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    width: 100%;
+}
+.signup__cards{
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.signup__card{
+    height: 50vh;
+    min-width: 300px;
+    width: 25%;
+    border-radius: 7px;
+    border: 2px solid #e74361; 
+    position: relative;
+    overflow: hidden;
+    color: white;
+    transition: all 0.5s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.signup__card__fillcolor{
+    z-index: 1;
+    position: absolute;
+    width: 900px;
+    height: 900px;
+    background: rgb(231, 67, 97);
+    border-radius: 100%;
+    bottom: -900px;
+    left: 0px;
+    transition: all 0.5s;
+}
+.signup__card__content{
+    position: absolute;
+    z-index: 2;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background: red; */
+}
+.signup__card:hover{
+    border-radius: 20px;
+}
+.sign__card__icon path{
+    transition: all 0.5s;
+}
+.signup__card:hover .sign__card__icon path{
+    stroke: white;
+}
+.signup__card:hover .signup__card__fillcolor{
+    bottom: -200px;
+    left: -100px;
 }
 
 /* Анимации */
