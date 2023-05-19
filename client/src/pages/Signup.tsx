@@ -1,5 +1,7 @@
 import { useState } from "react";
 import userController from "../controllers/user.controller";
+import { Link, useNavigate } from 'react-router-dom';
+import { errorsAxiosCodes } from "../errors";
 
 const SignUp = () =>{
     const [lastname, setLastname] = useState<string>('');
@@ -8,6 +10,7 @@ const SignUp = () =>{
     const [email, setEmail] = useState<string>('');
     const [phone, setPhone] = useState<string>('');
     const [password, setPassword] = useState<string>('');
+    const redirect = useNavigate();
     function submit(){
         userController.create(
             {
@@ -19,7 +22,9 @@ const SignUp = () =>{
                 password: password
             }
         ).then((response)=>{
-            console.log(response.data);
+            if(response === 200){
+                redirect('/signin');
+            }
         })
     }
     return(
@@ -51,7 +56,7 @@ const SignUp = () =>{
                     <input className='input__default' type="password" required onChange={(e)=>setPassword(e.target.value)}/>
                 </div>
                 <br/>
-                <button className="btn__default" onClick={()=>submit()}>Зарегистрироваться</button>
+                <button className="btn__default" onClick={(e)=>{submit();  e.preventDefault()}}>Зарегистрироваться</button>
             </form>
         </div>
     );
