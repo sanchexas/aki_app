@@ -3,6 +3,7 @@ import  UserController  from "../controllers/UserController";
 
 const UserRouter = Router();
 
-UserRouter.post("/create",UserController.create)
+UserRouter.post("/create/user",UserController.createUser)
+UserRouter.post("/create/areaholder",UserController.createAreaHolder)
 
 export default UserRouter

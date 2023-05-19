@@ -1,21 +1,34 @@
 import { Request,Response,NextFunction } from "express";
 import UserService from "../services/UserService";
 const userService = new UserService();
-import { IUser } from "../interfaces/IUser";
+import { IAreaHolder, IUser } from "../interfaces/Users";
 import { UserDto } from "../dtos/UserDto";
+import { AreaHolderDto } from "../dtos/AreaHolderDto";
 
  class UserController{
-    async create(req:Request,res:Response,next:NextFunction){
+    async createUser(req:Request,res:Response,next:NextFunction){
         try
         {
-            console.log(req.body)
+            
             const user:IUser = req.body as IUser;
             const userDto:UserDto = await userService.createUser(user);
             return res.status(200).send(userDto)
         }
         catch(e:any)
         {
-            res.status(400).send(e);
+            res.status(400).send(e.message);
+        }
+    }
+    async createAreaHolder(req:Request,res:Response,next:NextFunction){
+        try{
+            console.log(req.body)
+            const areaHolder:IAreaHolder = req.body as IAreaHolder;
+            const dto:AreaHolderDto = await userService.createAreaHolder(areaHolder);
+            return res.status(200).send(dto)
+        }
+        catch(e:any)
+        {
+            res.status(400).send(e.message);
         }
     }
 }
