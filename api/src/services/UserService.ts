@@ -1,6 +1,8 @@
+import { AreaHolderDto } from "../dtos/AreaHolderDto";
 import { UserDto } from "../dtos/UserDto";
 import { ApiError } from "../exceptions/api_errors";
-import { IUser } from "../interfaces/IUser";
+import { IAreaHolder, IUser } from "../interfaces/Users";
+import { AreaHolder } from "../models/AreaHolder";
 import { User } from "../models/User";
 import * as bcrypt from 'bcrypt'
 
@@ -22,6 +24,22 @@ class UserService{
         });
         const userDto:UserDto = new UserDto(user)
         return userDto;
+    }
+    async createAreaHolder(areaReq:IAreaHolder){
+
+        const userDto:UserDto = await this.createUser(areaReq)
+        const user:User = await User.findOne({where:{email:userDto.email}}) as User
+        const holder = await AreaHolder.create({
+            id:user.id,
+            position:areaReq.position,
+            area_name:areaReq.area_name,
+            description:areaReq.description,
+            organisation:areaReq.organisation,
+            industry:areaReq.industry
+        })
+        const areaDto:AreaHolderDto = new AreaHolderDto(holder,user);
+        return areaDto;
+
     }
 }
 export default UserService;

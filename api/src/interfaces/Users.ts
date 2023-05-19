@@ -8,3 +8,11 @@ export interface IUser{
     phone: string;
     password:string;
 }
+export interface IAreaHolder extends IUser{
+    position:string;
+    area_name:string;
+    organisation:string;
+    industry:number;
+    inn:number;
+    description:string;	
+}
