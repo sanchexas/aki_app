@@ -39,6 +39,9 @@ main{
 }
 a{
     text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: center;
 }
 footer{
     height: 150px;
@@ -131,7 +134,8 @@ footer{
     gap: 30px;
 }
 .greet__title{
-    font-size: 60px;
+    margin-top: 30px;
+    font-size: 70px;
     display: flex;
     flex-direction: column;
 }
