@@ -9,9 +9,11 @@ const Areas = () =>{
                 <input type="text" className="input__default" />
             </div>
             <div className="areas__page__main">
-                {/* <AreaCard/> */}
-                
-
+                <AreaCard title="Арт-пространство завода «Кристалл»" pricePerHour={228} space={20}/>
+                <AreaCard title="Арт-пространство завода «Кристалл»" pricePerHour={228} space={20}/>
+                <AreaCard title="Арт-пространство завода «Кристалл»" pricePerHour={228} space={20}/>
+                <AreaCard title="Арт-пространство завода «Кристалл»" pricePerHour={228} space={20}/>
+                <AreaCard title="Арт-пространство завода «Кристалл»" pricePerHour={228} space={20}/>
             </div>
         </div>
     );
