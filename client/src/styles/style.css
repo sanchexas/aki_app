@@ -201,6 +201,49 @@ footer{
     bottom: -200px;
     left: -100px;
 }
+.areas__page{
+    background: white;
+    width: 100%;
+    min-height: 100vh;
+    border-radius: 15px;
+    overflow: hidden;
+    padding-bottom: 100px;
+}
+.areas__page__header{
+    width: 100%;
+    height: 100px;
+    /* background: rgb(255, 127, 127); */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+.areas__page__main{
+    margin-top: 30px;
+    width: 100%;
+    /* background: rgb(255, 204, 123); */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+}
+.area__card{
+    width: 370px;
+    height: 450px;
+    background: rgb(255, 133, 81);
+    border-radius: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.area{
+    width: 95%;
+    height: 95%;
+    background: #e74361;
+    display: flex;
+    flex-direction: column;
+}
 
 /* Анимации */
 @keyframes gradient {
