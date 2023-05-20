@@ -7,6 +7,7 @@ import { Route, Routes, } from 'react-router-dom';
 import NotFound from './NotFound';
 import SignUpAs from '../pages/SignUpAs';
 import SignUpLandLord from '../pages/SignupLandlord';
+import Areas from '../pages/Areas';
 
 const Main = () =>{
     return(
@@ -19,6 +20,7 @@ const Main = () =>{
                 <Route path='/signupas' element={<SignUpAs/>}/>
                 <Route path='/signin' element={<SignIn/>}/>
                 <Route path="*" element={<NotFound/>} />
+                <Route path='/areas' element={<Areas/>}/>
             </Routes>
         </main>
     );
