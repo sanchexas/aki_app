@@ -229,20 +229,40 @@ footer{
     gap: 25px;
 }
 .area__card{
-    width: 370px;
+    width: 43vh;
     height: 450px;
-    background: rgb(255, 133, 81);
+    /* background: rgb(255, 133, 81); */
     border-radius: 7px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+.area__card__content{
+    display: flex;
+    flex-direction: column;
+}
+.area__card__price{
+    font-family: Cera-Pro-Medium;
+    color: #e74361;
+}
+.area__card__title{
+    font-size: 19px;
+    font-family: Cera-Pro-Medium;
+}
+.area__card__img img{
+    width: 100%;
+    height: 300px;
+    border-radius: 7px;
+    object-fit:cover;
+}
 .area{
     width: 95%;
     height: 95%;
-    background: #e74361;
+    color: black;
+    /* background: #e74361; */
     display: flex;
     flex-direction: column;
+    gap: 10px;
 }
 
 /* Анимации */
