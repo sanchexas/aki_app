@@ -18,7 +18,7 @@ class UserController{
     }
     async createLandLord(data: object){
         let result;
-        await Axios.post(`${process.env.API_URL}/users/create/areaholder`, data).then((response: AxiosResponse)=>{
+        await Axios.post(`${process.env.REACT_APP_API_URL}/users/create/areaholder`, data).then((response: AxiosResponse)=>{
             if(response.status === 200){
                 result = response.status;
             } // прописать проверку для статусов 400 и выше
@@ -31,7 +31,7 @@ class UserController{
     }
     async auth(data: object){
         let result;
-        await Axios.post(`${process.env.API_URL}/users/create/signin`, data).then((response: AxiosResponse)=>{
+        await Axios.post(`${process.env.REACT_APP_API_URL}/users/create/signin`, data).then((response: AxiosResponse)=>{
             if(response.status === 200){
                 result = response.status;
             } // прописать проверку для статусов 400 и выше, неправильно введен пароль и так далее
