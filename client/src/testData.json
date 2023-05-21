@@ -1,0 +1,15 @@
+{
+    "testOptions": [
+        {"value": "test1", "label": "Test1"},
+        {"value": "test2", "label": "Test2"},
+        {"value": "test3", "label": "Test3"},
+        {"value": "test4", "label": "Test4"},
+        {"value": "test5", "label": "Test5"},
+        {"value": "test6", "label": "Test6"}
+    ],
+    "testImgUrls": [
+        "https://vibirai.ru/image/720087.jpg",
+        "https://pro-dachnikov.com/uploads/posts/2021-10/1633801623_12-p-kak-sdelat-doma-kak-v-studii-foto-12.jpg", 
+        "https://phonoteka.org/uploads/posts/2021-04/1619113061_25-phonoteka_org-p-podsvetka-fona-v-studii-26.jpg"
+    ]
+}

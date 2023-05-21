@@ -10,7 +10,7 @@ const PaintStarsByRate = ({rate}: PaintStarProps) =>{
             {[...Array(5)].map((_, i)=>{
                 const  ratingValue = i + 1;
                 return(
-                    <RateStar key={i} color={ratingValue <= rate ? 'rgb(231, 67, 98)' : '#cccccc'}/>
+                    <RateStar key={i} color={ratingValue <= rate ? '#fc385c' : '#cccccc'}/>
                 );
             })}
         </div>
