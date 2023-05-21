@@ -3,9 +3,10 @@ import { useState } from "react";
 type sliderProps ={
     slides: string[]
     dots?: boolean
+    arrows?: boolean
 }
 
-const ImageSlider = ({ slides, dots }: sliderProps) => {
+const ImageSlider = ({ slides, dots, arrows }: sliderProps) => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const slideStyles: React.CSSProperties = {
         width: "100%",
@@ -24,6 +25,7 @@ const ImageSlider = ({ slides, dots }: sliderProps) => {
         color: "#fff",
         zIndex: 1,
         cursor: "pointer",
+        display: arrows ? "block" : "none"
     };
     
     const leftArrowStyles: React.CSSProperties  = {
@@ -35,6 +37,7 @@ const ImageSlider = ({ slides, dots }: sliderProps) => {
         color: "#fff",
         zIndex: 1,
         cursor: "pointer",
+        display: arrows ? "block" : "none"
     };
     
     const sliderStyles: React.CSSProperties  = {
@@ -43,6 +46,9 @@ const ImageSlider = ({ slides, dots }: sliderProps) => {
     };
     
     const dotsContainerStyles: React.CSSProperties  = {
+        bottom: "10px",
+        left: "45%",
+        position: "absolute",
         display: dots ? "flex" : "none",
         justifyContent: "center",
     };
@@ -50,7 +56,8 @@ const ImageSlider = ({ slides, dots }: sliderProps) => {
     const dotStyle: React.CSSProperties  = {
         margin: "0 3px",
         cursor: "pointer",
-        fontSize: "20px",
+        fontSize: "10px",
+        color: "white"
     };
     const goToPrevious = () => {
         const isFirstSlide = currentIndex === 0;
@@ -79,19 +86,20 @@ const ImageSlider = ({ slides, dots }: sliderProps) => {
             <div onClick={goToNext} style={rightArrowStyles}>
             ❱
             </div>
-        </div>
-        <div style={slideStylesWidthBackground}></div>
-        <div style={dotsContainerStyles}>
-            {slides.map((slide, slideIndex) => (
-            <div
-                style={dotStyle}
-                key={slideIndex}
-                onClick={() => goToSlide(slideIndex)}
-            >
-                ●
-            </div>
+            <div style={dotsContainerStyles}>
+                {slides.map((slide, slideIndex) => (
+                <div
+                    style={dotStyle}
+                    key={slideIndex}
+                    onClick={() => goToSlide(slideIndex)}
+                    onMouseEnter={()=>goToSlide(slideIndex)}
+                >
+                    ●
+                </div>
             ))}
         </div>
+        </div>
+        <div style={slideStylesWidthBackground}></div>
         </div>
     );
     };
