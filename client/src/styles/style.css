@@ -231,23 +231,32 @@ footer{
 .area__card{
     width: 43vh;
     height: 450px;
-    /* background: rgb(255, 133, 81); */
     border-radius: 7px;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-bottom: 20px;
+    transition: all 0.2s;
+}
+.area__card:hover{
+    background: #f2f2f2;
 }
 .area__card__content{
     display: flex;
     flex-direction: column;
+    gap: 7px;
 }
 .area__card__price{
     font-family: Cera-Pro-Medium;
-    color: #e74361;
+    color: #fc385c;
+    font-size: 20px;
 }
 .area__card__title{
     font-size: 19px;
     font-family: Cera-Pro-Medium;
+}
+.area__card__space{
+    color: gray;
 }
 .area__card__img img{
     width: 100%;
