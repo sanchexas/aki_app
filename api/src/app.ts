@@ -9,6 +9,7 @@ import cookieParser from 'cookie-parser';
 import testRouter from './routes/test.routes';
 import UserRouter from './routes/UserRouter';
 import { connection } from './db';
+import AreaRouter from './routes/AreaRouter';
 
 
 export class App{
@@ -38,6 +39,7 @@ export class App{
     routes(){
     this.app.use('/test', testRouter);
     this.app.use("/users",UserRouter)
+    this.app.use("/area",AreaRouter)
     }
     async listen(){
         await connection()

@@ -28,7 +28,7 @@ export class AreaHolderDto extends UserDto{
         this.position = areaModel.position
         this.area_name = areaModel.area_name
         this.organisaion = areaModel.organisation
-        this.industry = areaModel.industry
+        this.industry = areaModel.indust.name
         this.description = areaModel.description
     }
 
