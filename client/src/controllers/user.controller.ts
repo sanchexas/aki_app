@@ -42,6 +42,19 @@ class UserController{
         });
         return result;
     }
+    async uploadImage(formData: FormData){
+        let result;
+        await Axios.post(`${process.env.REACT_APP_API_URL}/users/update/image`, formData).then((response: AxiosResponse)=>{
+            if(response.status === 200){
+                result = response.status;
+            } // прописать проверку для статусов 400 и выше
+        }).catch(function (error: AxiosError) {
+            if (error) {
+                result = "Что то не так с сервером";
+            } 
+        });
+        return result;
+    }
 }
 
 // eslint-disable-next-line import/no-anonymous-default-export

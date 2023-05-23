@@ -1,7 +1,4 @@
-import { Routes, Route, Link, Outlet, NavLink,} from 'react-router-dom';
-import data from '../testData.json';
-import Account from '../components/Account';
-import TestComponent from '../components/TestComponent';
+import { Link, Outlet,} from 'react-router-dom';
 
 const Profile = () =>{
     return(
