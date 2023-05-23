@@ -8,13 +8,18 @@ import NotFound from './NotFound';
 import SignUpAs from '../pages/SignUpAs';
 import SignUpLandLord from '../pages/SignupLandlord';
 import Areas from '../pages/Areas';
+import Account from './Account';
+import TestComponent from './TestComponent';
 
 const Main = () =>{
     return(
         <main>
             <Routes>
                 <Route path='/' index element={<Greeting/>}/>
-                <Route path='/profile' element={<Profile/>}/>
+                <Route path='/profile' element={<Profile/>}>
+                    <Route path='' element={<Account/>}/>
+                    <Route path='test' element={<TestComponent/>}/>
+                </Route>   
                 <Route path='/signup/tenant' element={<SignUpTenant/>}/>
                 <Route path='/signup/landlord' element={<SignUpLandLord/>}/>
                 <Route path='/signupas' element={<SignUpAs/>}/>

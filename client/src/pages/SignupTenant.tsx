@@ -24,7 +24,7 @@ const SignUpTenant = () =>{
             if(response === 200){
                 redirect('/signin');
             }
-        })
+        });
     }
     return(
         <div>
