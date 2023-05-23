@@ -12,7 +12,7 @@ class UserController{
         }).catch(function (error: AxiosError) {
             if (error) {
                 result = "Что то не так с сервером";
-            } 
+            }
         });
         return result;
     }

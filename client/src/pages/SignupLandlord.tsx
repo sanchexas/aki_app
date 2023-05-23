@@ -10,11 +10,8 @@ const SignUpLandLord = () =>{
     const [phone, setPhone] = useState<string>('');
     const [password, setPassword] = useState<string>('');
     const [position, setPosition] = useState<string>('');
-    const [areaName, setAreaName] = useState<string>('');
     const [organisation, setOrganisation] = useState<string>('');
     const [inn, setInn] = useState<string>('');
-    const [industry, setIndustry] = useState<string>('');
-    const [description, setDescription] = useState<string>('');
     const redirect = useNavigate();
     function submit(){
         userController.createLandLord(
@@ -26,11 +23,8 @@ const SignUpLandLord = () =>{
                 phone: phone, 
                 password: password,
                 position: position,
-                area_name: areaName,
                 organisation: organisation,
                 inn: inn,
-                industry: industry,
-                description: description
             }
         ).then((response)=>{
             if(response === 200){
@@ -69,13 +63,6 @@ const SignUpLandLord = () =>{
                             <input className='input__default' type="text" required onChange={(e)=>setPosition(e.target.value)}/>
                         </div>
                         <div className='form__item'>
-                            <span>Название площадки</span>
-                            <input className='input__default' type="text" required onChange={(e)=>setAreaName(e.target.value)}/>
-                        </div>
-                    </div>
-                    <div>
-                        
-                        <div className='form__item'>
                             <span>Название юр. лица</span>
                             <input className='input__default' type="text" required onChange={(e)=>setOrganisation(e.target.value)}/>
                         </div>
@@ -84,17 +71,11 @@ const SignUpLandLord = () =>{
                             <input className='input__default' type="text" required onChange={(e)=>setInn(e.target.value)}/>
                         </div>
                         <div className='form__item'>
-                            <span>Индустрия</span>
-                            <select className='input__default' required onChange={(e)=>setIndustry(e.target.value)}>
-                                <option value="default">default</option>
-                            </select>
-                        </div>
-                        <div className='form__item'>
-                            <span>Описание площадки</span>
-                            <textarea className='input__default' rows={3} required onChange={(e)=>setDescription(e.target.value)}/>
-                        </div>
-                        <div className='form__item'>
                             <span>Придумайте пароль</span>
+                            <input className='input__default' type="password" required onChange={(e)=>setPassword(e.target.value)}/>
+                        </div>
+                        <div className='form__item'>
+                            <span>Повторите пароль</span>
                             <input className='input__default' type="password" required onChange={(e)=>setPassword(e.target.value)}/>
                         </div>
                     </div>
