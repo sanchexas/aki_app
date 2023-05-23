@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import PaintStarsByRate from './PaintStarsByRate';
 import ImageSlider from './ImageSlider';
-import { useState } from 'react';
 import data from '../testData.json';
 
 type AreaCardType ={

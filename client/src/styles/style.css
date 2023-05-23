@@ -371,6 +371,39 @@ footer{
 .account__info__btns{
     display: flex;
     justify-content: flex-end;
+    gap: 30px;
+}
+.input__default__light{
+    padding: 10px 12px;
+    font-size: 20px;
+    outline: none;
+    width: 350px;
+    border-radius: 7px;
+    border: none;
+    background: #f2f2f2;
+}
+.avatar__edit{
+    width: 35vh;
+    height: 35vh;
+    overflow: hidden;
+    border-radius: 100%;
+    margin-bottom: 30px;
+}
+.avatar__edit img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.avatar__editor__window{
+    width:45vh;
+    height: 50vh;
+    background: white;
+    border-radius: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    flex-direction: column;
 }
 .account__info__avatar img{
     width: 100%;
