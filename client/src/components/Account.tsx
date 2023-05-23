@@ -18,13 +18,19 @@ const Account = () =>{
     const editPhotoHandler = () =>{
         (editPhoto === false) ? setEditPhoto(true) : setEditPhoto(false);
     }
-    const submitForm = async (event: React.FormEvent<HTMLFormElement>) =>{
+    const submitFormAvatar = async (event: React.FormEvent<HTMLFormElement>) =>{
         event.preventDefault();
         if(formElement.current){
             const formData = new FormData(formElement.current);
             await userController.uploadImage(formData);
             window.location.reload();
         }
+    }
+    const submitProfileChanges = async () =>{
+        await userController.updateProfile({
+            email: email,
+            phone: phone
+        })
     }
     useEffect(()=>{
         if(imageFile !== undefined){
@@ -80,7 +86,7 @@ const Account = () =>{
                 :
                     <div className='account__info__btns'>
                         <button className='btn__bordered__light' onClick={()=>editHandler()}>Отмена</button>
-                        <button className='btn__default' onClick={()=>editHandler()}>Сохранить</button>
+                        <button className='btn__default' onClick={()=>submitProfileChanges()}>Сохранить</button>
                     </div>
                 }
                 
@@ -96,7 +102,7 @@ const Account = () =>{
                 justifyContent: "center",
                 alignItems: "center",
             }}>
-                <form className='avatar__editor__window' ref={formElement} onClick={(e)=>e.stopPropagation()} onSubmit={submitForm} encType='multipart/form-data'>
+                <form className='avatar__editor__window' ref={formElement} onClick={(e)=>e.stopPropagation()} onSubmit={submitFormAvatar} encType='multipart/form-data'>
                     <div className='avatar__edit'>
                         <img src={(preview) ? preview : image} alt="avatar" />
                     </div>
