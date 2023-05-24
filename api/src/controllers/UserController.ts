@@ -9,25 +9,25 @@ import { AreaHolderDto } from "../dtos/AreaHolderDto";
     async createUser(req:Request,res:Response,next:NextFunction){
         try
         {
-            
             const user:IUser = req.body as IUser;
             const userDto:UserDto = await userService.createUser(user);
             return res.status(200).send(userDto)
         }
         catch(e:any)
         {
+            console.log(e)
             res.status(400).send(e.message);
         }
     }
     async createAreaHolder(req:Request,res:Response,next:NextFunction){
         try{
-            console.log(req.body)
             const areaHolder:IAreaHolder = req.body as IAreaHolder;
             const dto:AreaHolderDto = await userService.createAreaHolder(areaHolder);
             return res.status(200).send(dto)
         }
         catch(e:any)
         {
+            console.log(e)
             res.status(400).send(e.message);
         }
     }

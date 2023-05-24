@@ -3,6 +3,7 @@ import { UserDto } from "../dtos/UserDto";
 import { ApiError } from "../exceptions/api_errors";
 import { IAreaHolder, IUser } from "../interfaces/Users";
 import { AreaHolder } from "../models/AreaHolder";
+import { Industry } from "../models/Industry";
 import { User } from "../models/User";
 import * as bcrypt from 'bcrypt'
 
@@ -29,6 +30,7 @@ class UserService{
 
         const userDto:UserDto = await this.createUser(areaReq)
         const user:User = await User.findOne({where:{email:userDto.email}}) as User
+        
         const holder = await AreaHolder.create({
             id:user.id,
             position:areaReq.position,
@@ -37,7 +39,8 @@ class UserService{
             organisation:areaReq.organisation,
             industry:areaReq.industry
         })
-        const areaDto:AreaHolderDto = new AreaHolderDto(holder,user);
+        const industry = await Industry.findByPk(areaReq.industry) as Industry;
+        const areaDto:AreaHolderDto = new AreaHolderDto(holder,user,industry);
         return areaDto;
 
     }
