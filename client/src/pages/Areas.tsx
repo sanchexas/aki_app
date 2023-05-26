@@ -69,7 +69,7 @@ const Areas = () =>{
                     noOptionsMessage={({inputValue}) => !inputValue ? "" : "Не найдено"} 
                 />
                 <button className="btn__default">
-                    секс 
+                    больше
                 </button>
             </form>
             <div className="areas__page__main">
