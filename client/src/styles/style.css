@@ -229,10 +229,11 @@ footer{
 }
 .areas__page__header{
     width: 100%;
-    height: 100px;
+    height: 200px;
     /* background: rgb(255, 127, 127); */
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-around;
 }
@@ -377,11 +378,12 @@ footer{
     padding: 10px 12px;
     font-size: 20px;
     outline: none;
-    width: 350px;
     border-radius: 7px;
     border: none;
     background: #f2f2f2;
+    position: relative;
 }
+
 .avatar__edit{
     width: 35vh;
     height: 35vh;

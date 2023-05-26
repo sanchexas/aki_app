@@ -42,6 +42,7 @@ const Account = () =>{
         }
     },[imageFile]);
     useEffect(()=>{
+        //получения юзера из бд
         setEmail(data.testUser[0].email);
         setPhone(data.testUser[0].phone);
         setImage(data.testUser[0].image);

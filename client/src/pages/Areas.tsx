@@ -10,8 +10,8 @@ const Areas = () =>{
             border: "none",
             cursor: "text",
             boxShadow: "none",
-            background: "rgba(0,0,0,.08)",
-            width: "200px",
+            background: "#f2f2f2",
+            width: "280px",
             height: "45px",
             color: "gray"
         }),
@@ -54,11 +54,24 @@ const Areas = () =>{
     }
     return(
         <div className="areas__page">
-            <div className="areas__page__header">
-                <Select options={data.testOptions} styles={colorStyles} placeholder="Индустрия" noOptionsMessage={({inputValue}) => !inputValue ? "sdfsdf" : "Не найдено"} />
-                <Select options={data.testOptions} styles={colorStyles} placeholder="Площадь" noOptionsMessage={({inputValue}) => !inputValue ? "sdfsdf" : "Не найдено"} />
-                <Select options={data.testOptions} styles={colorStyles} placeholder="Еще чо то" noOptionsMessage={({inputValue}) => !inputValue ? "sdfsdf" : "Не найдено"} />
-            </div>
+            <form className="areas__page__header">
+                <input type="text" className='input__default__light' style={{width: "300px"}}/>
+                <Select 
+                    options={data.testOptions} 
+                    styles={colorStyles} 
+                    placeholder="Индустрия" 
+                    noOptionsMessage={({inputValue}) => !inputValue ? "" : "Не найдено"} 
+                />
+                <Select 
+                    options={data.testOptions} 
+                    styles={colorStyles} 
+                    placeholder="Индустрия" 
+                    noOptionsMessage={({inputValue}) => !inputValue ? "" : "Не найдено"} 
+                />
+                <button className="btn__default">
+                    секс 
+                </button>
+            </form>
             <div className="areas__page__main">
                 <AreaCard title="Арт-пространство завода «Кристалл»" pricePerHour={228} space={20}/>
                 <AreaCard title="Арт-пространство завода «Кристалл»" pricePerHour={228} space={20}/>
